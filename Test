@@ -1,0 +1,20 @@
+import pathlib
+NOTEBOOK_PATH = pathlib.Path().resolve()
+DATA_DIRECTORY = NOTEBOOK_PATH / "data"
+
+# We will export HTML pages during this lesson,
+# let’s also prepare an output directory for them:
+HTML_DIRECTORY = NOTEBOOK_PATH / "html"
+HTML_DIRECTORY.mkdir(exist_ok=True)
+
+import folium
+
+#高知県大豊町役所の位置をマップの中心に指定
+#マップの初期ズームは8に設定
+map = folium.Map(
+    location=(33.76870937326509, 133.64309481218223), 
+    zoom_start=8, 
+    control_scale=True #これをFalseにしても何も変わらないのが不思議
+)
+
+map
